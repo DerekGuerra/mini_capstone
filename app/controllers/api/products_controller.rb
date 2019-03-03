@@ -17,5 +17,17 @@ class Api::ProductsController < ApplicationController
     @product.save
     render 'show.json.jbuilder'
   end
+
+  def update 
+    #find product
+    the_id = params[:id]
+    @product = Product.find_by(id: the_id)
+    #update product
+    @product.name = params[:name]
+    @product.price = params[:price]
+    @product.description = params[:description]
+    @product.save
+    render 'show.json.jbuilder'
+  end
 end
 
