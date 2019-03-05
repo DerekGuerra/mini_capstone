@@ -26,6 +26,7 @@ class Api::ProductsController < ApplicationController
     @product.name = params[:name]
     @product.price = params[:price]
     @product.description = params[:description]
+    @product.image_url = params[:image_url]
     @product.save
     render 'show.json.jbuilder'
   end
