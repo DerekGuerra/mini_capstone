@@ -9,7 +9,10 @@ class Product < ApplicationRecord
   end
 
   def tax
-    product_taxed = price * 1.09
-    p "Total price with tax is #{product_taxed}"
+    price * 0.09
+  end
+
+  def sum
+    price + tax
   end
 end
