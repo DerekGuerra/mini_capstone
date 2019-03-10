@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
 
-  def is_discounted?
+  def is_discounted
     if price < 10 
       p "Item is on clearance"
     else
@@ -15,4 +15,7 @@ class Product < ApplicationRecord
   def sum
     price + tax
   end
-end
+
+  validates :name, length: { maximum: 5 }
+  validates :price, presence: true 
+end 
