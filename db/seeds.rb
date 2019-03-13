@@ -10,6 +10,6 @@
 products = Product.all
 
 products.each do |product|
-  product.supplier_id = 1
+  product.supplier_id = Supplier.where(i)
   product.save
 end

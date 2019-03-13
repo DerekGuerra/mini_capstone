@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
+  has_many :images
 
   def is_discounted
     if price < 10 
@@ -16,6 +18,6 @@ class Product < ApplicationRecord
     price + tax
   end
 
-  validates :name, length: { maximum: 5 }
-  validates :price, presence: true 
+  # validates :name, length: { maximum: 5 }
+  # validates :price, presence: true 
 end 

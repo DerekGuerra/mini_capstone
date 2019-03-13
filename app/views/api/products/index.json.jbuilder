@@ -6,5 +6,5 @@ json.array! @products.each do |product|
   json.tax product.tax
   json.total_price product.sum
   json.description product.description
-  json.image_url product.image_url
+  
 end    
