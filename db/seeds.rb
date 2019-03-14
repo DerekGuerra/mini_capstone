@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-products = Product.all
+products = Product.all 
 
 products.each do |product|
-  product.supplier_id = Supplier.where(i)
-  product.save
+  Image.create(
+    url: product.image_url, 
+    product_id: product.id
+  )
 end
