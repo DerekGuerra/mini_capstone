@@ -2,6 +2,9 @@ class Product < ApplicationRecord
   belongs_to :supplier
   has_many :orders
   has_many :images
+  has_many :categories
+  has_many :product_categories
+  has_many :categories, through: :product_categories
 
   def is_discounted
     if price < 10 
@@ -12,7 +15,7 @@ class Product < ApplicationRecord
   end
 
   def tax
-    price * 0.09
+    :price * 0.09
   end
 
   def sum

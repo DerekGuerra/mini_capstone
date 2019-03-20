@@ -1,4 +1,5 @@
 class Api::ProductsController < ApplicationController
+  before_action :authenticate_admin
 
   def index
     if params[:search]
@@ -24,12 +25,16 @@ class Api::ProductsController < ApplicationController
     render 'show.json.jbuilder'
   end
 
+  before_action :authenticate_admin
+
   def create
     @product = Product.new(name: params[:input_name], price: params[:input_price], description: params[:input_description])
 
     @product.save
     render 'show.json.jbuilder'
   end
+
+  before_action :authenticate_admin
 
   def update 
     #find product
@@ -42,6 +47,8 @@ class Api::ProductsController < ApplicationController
     @product.save
     render 'show.json.jbuilder'
   end
+
+  before_action :authenticate_admin
 
   def destroy
     # find product
