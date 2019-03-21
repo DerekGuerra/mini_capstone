@@ -17,8 +17,8 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create"
     post "/order" => "orders#create"
 
-    get '/carted' => 'carted_products#index'
-    post '/carted' => 'carted_products#create'
+    get '/carted_product' => 'carted_products#index'
+    post '/carted_product' => 'carted_products#create'
 
   end
 end
