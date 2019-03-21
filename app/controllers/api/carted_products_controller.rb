@@ -19,4 +19,10 @@ class Api::CartedProductsController < ApplicationController
     end
   end
 
+  def destroy 
+    @carted_product = CartedProduct.find_by(id: params[:id])
+    @carted_product.status = "removed"
+    render json: {message: "item deleted"}
+    @carted_product.save
+  end
 end
