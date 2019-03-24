@@ -5,4 +5,5 @@ json.array! @carted_products.each do |carted_product|
   json.quantity carted_product.quantity
   json.status carted_product.status
   json.order_id carted_product.order_id
+  json.images carted_product.images
 end

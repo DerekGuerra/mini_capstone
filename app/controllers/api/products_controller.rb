@@ -28,7 +28,7 @@ class Api::ProductsController < ApplicationController
   before_action :authenticate_admin
 
   def create
-    @product = Product.new(name: params[:input_name], price: params[:input_price], description: params[:input_description])
+    @product = Product.new(name: params[:input_name], price: params[:input_price], description: params[:input_description], images: params[:input_mages])
 
     @product.save
     render 'show.json.jbuilder'
